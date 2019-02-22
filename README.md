@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## This project is demo for using Hooks with functional programming in React . I have used react defined hook `useState` to test waht hook is and how we can use it .
+## This project is demo for using Hooks with functional programming in React . I have used react defined hook `useState` to test what hook is and how we can use it .
 
 ### To do
 
