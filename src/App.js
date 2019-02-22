@@ -1,4 +1,5 @@
 import React, { Component, useContext, useState, useEffect } from "react";
+import { Button, Container, Row, Col, Card } from "react-bootstrap";
 import logo from "./logo.svg";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
@@ -48,19 +49,26 @@ export default function App() {
         <div className="todo-list">
           <h1 className="title">React Hooks Example</h1>
         </div>
-        <div className="Todo-form">
-          {todos.map((todo, index) => (
-            <Todo
-              key={index}
-              index={index}
-              todo={todo}
-              completeTodo={completeTodo}
-              removeTodo={removeTodo}
-            />
-          ))}
-          <Form addTodo={addTodo} />
-        </div>
       </header>
+      <div className="Todo-list">
+        <Container>
+          {todos.map((todo, index) => (
+            <Row>
+              {" "}
+              <Todo
+                key={index}
+                index={index}
+                todo={todo}
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
+              />
+            </Row>
+          ))}
+          <div className="Todo-list">
+            <Form addTodo={addTodo} />
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }

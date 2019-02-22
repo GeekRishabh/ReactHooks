@@ -13,6 +13,9 @@ export default function Form(props) {
     setValue("");
   };
 
+  // useEffect(() => {
+  //   alert(`You Added ${value} `);
+  // });
   const handleOnChange = event => setValue(event.target.value); // change value for isCompleted
 
   return (

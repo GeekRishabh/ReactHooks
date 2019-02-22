@@ -18,13 +18,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.todo-list {
+.Todo-list {
+  margin: 0 auto;
+  padding: 10;
+  border: 10 solid;
+  border-radius: 2;
 }
 
 .Todo-form {
   margin: 0 auto;
-  padding: 10;
-  border: 10 solid;
+  padding: 15px;
+  border: 20px solid;
   border-radius: 2;
 }
 
