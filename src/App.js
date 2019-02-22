@@ -1,28 +1,66 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, useContext, useState, useEffect } from "react";
+import logo from "./logo.svg";
+import Todo from "./components/Todo";
+import Form from "./components/Form";
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+export default function App() {
+  const [todos, setTodos] = useState([
+    {
+      text: "React Hooks for test",
+      isComplete: false
+    },
+    {
+      text: "testing code",
+      isComplete: false
+    },
+    {
+      text: "Experiment",
+      isComplete: true
+    }
+  ]);
+
+  const addTodo = text => {
+    const newTodos = [...todos, { text }];
+
+    setTodos(newTodos);
+  };
+
+  const completeTodo = index => {
+    const newTodos = [...todos];
+
+    newTodos[index].isComplete = !newTodos[index].isComplete;
+
+    setTodos(newTodos);
+  };
+
+  const removeTodo = index => {
+    const newTodos = [...todos];
+
+    newTodos.splice(index, 1);
+
+    setTodos(newTodos);
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <div className="todo-list">
+          <h1 className="title">React Hooks Example</h1>
+        </div>
+        <div className="Todo-form">
+          {todos.map((todo, index) => (
+            <Todo
+              key={index}
+              index={index}
+              todo={todo}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+            />
+          ))}
+          <Form addTodo={addTodo} />
+        </div>
+      </header>
+    </div>
+  );
 }
-
-export default App;
