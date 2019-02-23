@@ -54,7 +54,6 @@ export default function App() {
         <Container>
           {todos.map((todo, index) => (
             <Row>
-              {" "}
               <Todo
                 key={index}
                 index={index}
@@ -64,8 +63,11 @@ export default function App() {
               />
             </Row>
           ))}
-          <div className="Todo-list">
-            <Form addTodo={addTodo} />
+          <div style={{ padding: 10 }} className="Todo-list">
+            <span style={{ padding: 10, margin: 10 }}> Add new Item</span>
+            <Row style={{ padding: 20 }}>
+              <Form addTodo={addTodo} />
+            </Row>
           </div>
         </Container>
       </div>
